@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Connexion — entreprender.ga</title>
+<meta name="description" content="Connectez-vous à votre espace entrepreneur.">
+<meta name="theme-color" content="#2E68BE">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/pjs-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/connexion.js" defer></script>
+</head>
+<body class="auth-page">
+
+<div class="auth-shell">
+
+  <!-- ===== Visuel ===== -->
+  <aside class="auth-visual">
+    <div class="blue-bg" aria-hidden="true">
+      <span class="blue-bg__c1"></span>
+      <span class="blue-bg__c2"></span>
+      <span class="blue-bg__c3"></span>
+      <svg class="blue-bg__ribbon" viewBox="0 0 600 900" preserveAspectRatio="none"><path d="M-30 680 C 140 610, 260 730, 410 640 S 560 490, 640 530" fill="none" stroke="#FFCD04" stroke-width="12" stroke-linecap="round"/><path d="M-30 710 C 150 640, 270 760, 420 670 S 570 520, 640 560" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="2"/></svg>
+      <img class="watermark blue-bg__mark" src="assets/img/e-blanc.png" alt="">
+    </div>
+
+    <a class="auth-visual__logo" href="index.html" aria-label="entreprender.ga, retour à l’accueil">
+      <img src="assets/img/logo-blanc.png" alt="entreprender.ga" width="187" height="34">
+    </a>
+
+    <div class="orb" aria-hidden="true">
+      <span class="orb__ring"></span>
+      <span class="orb__halo"></span>
+      <span class="orb__core"><img src="assets/img/e-couleur.png" alt=""></span>
+      <span class="orb__chip orb__chip--a"><span class="orb__chip-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2E68BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 10h19"/></svg></span>Taxes</span>
+      <span class="orb__chip orb__chip--b"><span class="orb__chip-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFCD04" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/></svg></span>Cotisations</span>
+      <span class="orb__chip orb__chip--c"><span class="orb__chip-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1E7A45" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>Reçu PDF</span>
+    </div>
+
+    <p class="auth-visual__title">Votre entreprise en règle, en un clic.</p>
+  </aside>
+
+  <!-- ===== Formulaires ===== -->
+  <main class="auth-panel">
+    <div class="auth-panel__top">
+      <a class="back-link" href="index.html">
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
+        Accueil
+      </a>
+    </div>
+
+    <div class="auth-panel__inner">
+
+      <!-- ---------- Connexion ---------- -->
+      <form class="auth-form" data-view="connexion" data-auth="login" novalidate aria-labelledby="login-title">
+        <div class="auth-form__head">
+          <h1 class="auth-form__title" id="login-title">Connexion</h1>
+          <p class="auth-form__sub">Heureux de vous revoir.</p>
+        </div>
+
+        <div class="segmented" role="group" aria-label="Se connecter avec" data-id-switch>
+          <button type="button" class="segmented__btn" aria-pressed="true" data-mode="email">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>E-mail
+          </button>
+          <button type="button" class="segmented__btn" aria-pressed="false" data-mode="phone">
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>Téléphone
+          </button>
+        </div>
+
+        <div class="field" data-field="identifier">
+          <label class="field__label" for="login-id" data-id-label>Adresse e-mail</label>
+          <div class="field__control">
+            <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E68BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            <input id="login-id" name="identifier" type="email" autocomplete="username" placeholder="nom@entreprise.ga" required aria-describedby="login-id-error">
+          </div>
+          <p class="field__error" id="login-id-error" hidden></p>
+        </div>
+
+        <div class="field" data-field="password">
+          <div class="field__row">
+            <label class="field__label" for="login-pw">Mot de passe</label>
+            <a class="field__link" href="#mot-de-passe-oublie">Oublié ?</a>
+          </div>
+          <div class="field__control field__control--pw">
+            <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E68BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            <input id="login-pw" name="password" type="password" autocomplete="current-password" placeholder="Votre mot de passe" required aria-describedby="login-pw-error">
+            <button type="button" class="icon-btn" data-toggle-password aria-label="Afficher le mot de passe" aria-controls="login-pw">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A5672" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+          <p class="field__error" id="login-pw-error" hidden></p>
+        </div>
+
+        <p class="form-status" role="status" data-status hidden></p>
+
+        <button type="submit" class="btn btn-primary btn-submit">
+          <span data-submit-label>Se connecter</span>
+          <span class="btn-submit__arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E2A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </button>
+
+        <p class="auth-form__foot">Nouveau ? <a href="#inscription">Créer un compte</a></p>
+      </form>
+
+      <!-- ---------- Inscription (2 étapes) ---------- -->
+      <form class="auth-form" data-view="inscription" data-auth="register" novalidate aria-labelledby="register-title" hidden>
+        <div class="auth-form__head">
+          <h1 class="auth-form__title" id="register-title">Créer un compte</h1>
+          <p class="auth-form__sub">Gratuit, en 2 minutes.</p>
+        </div>
+
+        <div class="wizard-progress" aria-hidden="true">
+          <span class="wizard-progress__item is-active" data-wizard-dot="1">Vous</span>
+          <span class="wizard-progress__item" data-wizard-dot="2">Votre entreprise</span>
+        </div>
+
+        <fieldset class="wizard-step" data-wizard-step="1">
+          <legend class="sr-only">Étape 1 sur 2 : vous</legend>
+          <div class="field-grid">
+            <div class="field" data-field="firstName">
+              <label class="field__label" for="reg-first">Prénom</label>
+              <div class="field__control"><input id="reg-first" name="firstName" autocomplete="given-name" required aria-describedby="reg-first-error"></div>
+              <p class="field__error" id="reg-first-error" hidden></p>
+            </div>
+            <div class="field" data-field="lastName">
+              <label class="field__label" for="reg-last">Nom</label>
+              <div class="field__control"><input id="reg-last" name="lastName" autocomplete="family-name" required aria-describedby="reg-last-error"></div>
+              <p class="field__error" id="reg-last-error" hidden></p>
+            </div>
+          </div>
+
+          <div class="field" data-field="identifier">
+            <label class="field__label" for="reg-id">E-mail ou téléphone</label>
+            <div class="field__control">
+              <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E68BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              <input id="reg-id" name="identifier" autocomplete="username" placeholder="nom@entreprise.ga" required aria-describedby="reg-id-error">
+            </div>
+            <p class="field__error" id="reg-id-error" hidden></p>
+          </div>
+
+          <div class="field" data-field="password">
+            <label class="field__label" for="reg-pw">Mot de passe</label>
+            <div class="field__control field__control--pw">
+              <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E68BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              <input id="reg-pw" name="password" type="password" autocomplete="new-password" placeholder="8 caractères minimum" required minlength="8" aria-describedby="reg-pw-error reg-pw-meter">
+              <button type="button" class="icon-btn" data-toggle-password aria-label="Afficher le mot de passe" aria-controls="reg-pw">
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A5672" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <div class="pw-meter" id="reg-pw-meter" data-pw-meter data-score="0">
+              <span class="pw-meter__bars" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+              <span class="pw-meter__label" data-pw-label aria-live="polite"></span>
+            </div>
+            <p class="field__error" id="reg-pw-error" hidden></p>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-submit" data-wizard-next>
+            <span>Continuer</span>
+            <span class="btn-submit__arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E2A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+          </button>
+        </fieldset>
+
+        <fieldset class="wizard-step" data-wizard-step="2" hidden>
+          <legend class="sr-only">Étape 2 sur 2 : votre entreprise</legend>
+          <div class="field" data-field="company">
+            <label class="field__label" for="reg-company">Raison sociale</label>
+            <div class="field__control"><input id="reg-company" name="company" autocomplete="organization" required aria-describedby="reg-company-error"></div>
+            <p class="field__error" id="reg-company-error" hidden></p>
+          </div>
+
+          <div class="field-grid">
+            <div class="field" data-field="nif">
+              <label class="field__label" for="reg-nif">NIF</label>
+              <div class="field__control"><input id="reg-nif" name="nif" required aria-describedby="reg-nif-error"></div>
+              <p class="field__error" id="reg-nif-error" hidden></p>
+            </div>
+            <div class="field" data-field="rccm">
+              <label class="field__label" for="reg-rccm">RCCM</label>
+              <div class="field__control"><input id="reg-rccm" name="rccm" required aria-describedby="reg-rccm-error"></div>
+              <p class="field__error" id="reg-rccm-error" hidden></p>
+            </div>
+          </div>
+
+          <div class="field" data-field="terms">
+            <label class="check"><input type="checkbox" name="terms" required aria-describedby="reg-terms-error"><span>J’accepte les <a href="#">conditions d’utilisation</a>.</span></label>
+            <p class="field__error" id="reg-terms-error" hidden></p>
+          </div>
+
+          <p class="form-status" role="status" data-status hidden></p>
+
+          <div class="wizard-actions">
+            <button type="button" class="btn-back" data-wizard-back aria-label="Revenir à l’étape précédente">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E2A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m11 6-6 6 6 6"/></svg>
+            </button>
+            <button type="submit" class="btn btn-primary btn-submit">
+              <span data-submit-label>Créer mon compte</span>
+              <span class="btn-submit__arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E2A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>
+            </button>
+          </div>
+        </fieldset>
+
+        <p class="auth-form__foot">Déjà inscrit ? <a href="#connexion">Se connecter</a></p>
+      </form>
+
+      <!-- ---------- Mot de passe oublié ---------- -->
+      <form class="auth-form" data-view="mot-de-passe-oublie" data-auth="reset" novalidate aria-labelledby="reset-title" hidden>
+        <div data-reset-form>
+          <div class="auth-form__head">
+            <span class="auth-form__mark" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E68BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4"/><path d="m10.8 12.2 8.7-8.7"/><path d="m17 6 3 3"/><path d="m15 8 2 2"/></svg></span>
+            <h1 class="auth-form__title" id="reset-title">Mot de passe oublié</h1>
+            <p class="auth-form__sub">Recevez un lien pour le changer.</p>
+          </div>
+        </div>
+        <div class="field" data-field="identifier" data-reset-form>
+          <label class="field__label" for="reset-id">E-mail ou téléphone</label>
+          <div class="field__control">
+            <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#2E68BE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+            <input id="reset-id" name="identifier" autocomplete="username" placeholder="nom@entreprise.ga" required aria-describedby="reset-id-error">
+          </div>
+          <p class="field__error" id="reset-id-error" hidden></p>
+        </div>
+
+        <p class="form-status" role="status" data-status hidden></p>
+
+        <button type="submit" class="btn btn-primary btn-submit" data-reset-form>
+          <span data-submit-label>Envoyer le lien</span>
+          <span class="btn-submit__arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E2A5C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+        </button>
+
+        <div class="auth-done" data-reset-done hidden tabindex="-1">
+          <span class="auth-done__icon" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1E7A45" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span>
+          <h2 class="auth-form__title">Lien envoyé</h2>
+          <p class="auth-form__sub">Vérifiez vos e-mails ou vos SMS.</p>
+          <a class="btn btn-outline" href="#connexion">Retour à la connexion</a>
+        </div>
+
+        <p class="auth-form__foot" data-reset-form><a href="#connexion">Retour à la connexion</a></p>
+      </form>
+
+    </div>
+
+    <p class="auth-panel__legal">© <span data-year>2026</span> entreprender.ga</p>
+  </main>
+</div>
+
+</body>
+</html>

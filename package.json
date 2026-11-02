@@ -1,0 +1,16 @@
+{
+  "name": "entreprender-ga-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site public entreprender.ga — accueil et espace de connexion",
+  "scripts": {
+    "build": "npm run typecheck && esbuild src/main.ts src/connexion.ts --bundle --minify --sourcemap --target=es2019 --format=iife --outdir=js",
+    "watch": "esbuild src/main.ts src/connexion.ts --bundle --sourcemap --target=es2019 --format=iife --outdir=js --watch",
+    "typecheck": "tsc --noEmit",
+    "serve": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "esbuild": "0.23.1",
+    "typescript": "5.5.4"
+  }
+}
